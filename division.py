@@ -13,7 +13,10 @@ class Division:
       counter = counter + 1
       if (counter > 1):
         last_result = self.result
-        self.result /= number
+        try:
+          self.result /= number
+        except ZeroDivisionError:
+          print('You cannot divide by 0')
         if(self.result.is_integer()):
           self.result = int(self.result)
         print(f'Step {counter - 1}: {str(last_result)} ÷ {str(number)} = {str(self.result)}')

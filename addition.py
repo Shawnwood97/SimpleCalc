@@ -1,6 +1,3 @@
-import traceback
-from exceptions import CalculatorInputError
-
 class Addition:
   numbers = []
   result = 0
@@ -10,10 +7,8 @@ class Addition:
     print(nums)
     self.result = float(nums[0][0])
     for num in nums[0]:
-      try:
-        self.numbers.append(float(num))
-      except ValueError:
-        raise CalculatorInputError()
+      self.numbers.append(float(num))
+
 
     for number in self.numbers:
       counter = counter + 1
